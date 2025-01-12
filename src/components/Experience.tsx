@@ -43,18 +43,19 @@ export const Experience = () => {
   return (
     <section className="py-32 px-4 relative" id="experience">
       <div className="hero-gradient" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-purple-500/10 via-transparent to-transparent" />
       <div className="max-w-4xl mx-auto">
-        <h2 className="text-4xl font-bold text-center mb-16 bg-clip-text text-transparent bg-gradient-to-r from-white to-white/80">
+        <h2 className="text-4xl font-bold text-center mb-16 gradient-text">
           Experience
         </h2>
         <div className="space-y-8">
           {experiences.map((exp, index) => (
-            <Card key={index} className="bg-card/50 backdrop-blur-sm border-white/10 card-hover">
+            <Card key={index} className="glass-effect card-hover transform transition-all duration-300">
               <CardHeader>
                 <CardTitle>
                   <div className="flex flex-col md:flex-row md:justify-between md:items-start gap-2">
                     <div>
-                      <h3 className="text-xl font-semibold text-white/90">{exp.title}</h3>
+                      <h3 className="text-xl font-semibold gradient-text">{exp.title}</h3>
                       <p className="text-primary/80">{exp.company}</p>
                     </div>
                     <div className="text-right">
@@ -67,7 +68,7 @@ export const Experience = () => {
               <CardContent>
                 <ul className="list-disc list-inside space-y-2 text-sm text-muted-foreground marker:text-primary/50">
                   {exp.highlights.map((highlight, idx) => (
-                    <li key={idx} className="leading-relaxed">{highlight}</li>
+                    <li key={idx} className="leading-relaxed hover:text-primary/90 transition-colors">{highlight}</li>
                   ))}
                 </ul>
               </CardContent>

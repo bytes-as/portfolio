@@ -60,3 +60,42 @@
 .card-hover {
   @apply transition-all duration-300 hover:scale-[1.02] hover:shadow-lg hover:shadow-foreground/5;
 }
+
+.glow-effect {
+  @apply relative overflow-hidden;
+}
+
+.glow-effect::before {
+  content: '';
+  @apply absolute inset-0 bg-gradient-to-r from-purple-500/20 to-blue-500/20 opacity-0 transition-opacity duration-300;
+}
+
+.glow-effect:hover::before {
+  @apply opacity-100;
+}
+
+.floating {
+  animation: floating 3s ease-in-out infinite;
+}
+
+@keyframes floating {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+.gradient-text {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-600;
+}
+
+.glass-effect {
+  @apply backdrop-blur-lg bg-white/5 border border-white/10;
+}
+
+.particle {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle at center, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0) 70%);
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+}

@@ -17,22 +17,23 @@ const skillCategories = [
 
 export const Skills = () => {
   return (
-    <section className="py-32 px-4 bg-secondary/20 backdrop-blur-sm relative" id="skills">
+    <section className="py-32 px-4 relative" id="skills">
       <div className="hero-gradient" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom,_var(--tw-gradient-stops))] from-blue-500/10 via-transparent to-transparent" />
       <div className="max-w-4xl mx-auto">
-        <h2 className="text-4xl font-bold text-center mb-16 bg-clip-text text-transparent bg-gradient-to-r from-white to-white/80">
+        <h2 className="text-4xl font-bold text-center mb-16 gradient-text">
           Skills
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {skillCategories.map((category, index) => (
-            <Card key={index} className="bg-card/50 backdrop-blur-sm border-white/10 card-hover">
+            <Card key={index} className="glass-effect card-hover">
               <CardContent className="pt-6">
-                <h3 className="text-xl font-semibold mb-4 text-white/90">{category.title}</h3>
+                <h3 className="text-xl font-semibold mb-4 gradient-text">{category.title}</h3>
                 <div className="flex flex-wrap gap-2">
                   {category.skills.map((skill, idx) => (
                     <span
                       key={idx}
-                      className="px-3 py-1 bg-white/5 rounded-full text-sm border border-white/10 hover:bg-white/10 transition-colors"
+                      className="px-3 py-1 glass-effect rounded-full text-sm hover:bg-white/10 transition-colors"
                     >
                       {skill}
                     </span>

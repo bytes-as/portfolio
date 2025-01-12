@@ -19,16 +19,17 @@ export const Projects = () => {
   return (
     <section className="py-32 px-4 relative" id="projects">
       <div className="hero-gradient" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-purple-500/10 via-transparent to-transparent" />
       <div className="max-w-4xl mx-auto">
-        <h2 className="text-4xl font-bold text-center mb-16 bg-clip-text text-transparent bg-gradient-to-r from-white to-white/80">
+        <h2 className="text-4xl font-bold text-center mb-16 gradient-text">
           Projects
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {projects.map((project, index) => (
-            <Card key={index} className="bg-card/50 backdrop-blur-sm border-white/10 card-hover">
+            <Card key={index} className="glass-effect card-hover">
               <CardHeader>
                 <CardTitle>
-                  <h3 className="text-xl font-semibold text-white/90">{project.title}</h3>
+                  <h3 className="text-xl font-semibold gradient-text">{project.title}</h3>
                   <p className="text-sm text-primary/80 mt-2">
                     {project.organization}
                   </p>
@@ -36,7 +37,7 @@ export const Projects = () => {
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-sm text-muted-foreground leading-relaxed">
+                <p className="text-sm text-muted-foreground leading-relaxed hover:text-primary/90 transition-colors">
                   {project.description}
                 </p>
               </CardContent>
