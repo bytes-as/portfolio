@@ -9,7 +9,7 @@
     --background: 222.2 84% 4.9%;
     --foreground: 210 40% 98%;
     
-    --card: 222.2 84% 4.9%;
+    --card: 217.2 32.6% 17.5%;
     --card-foreground: 210 40% 98%;
     
     --popover: 222.2 84% 4.9%;
@@ -41,7 +41,7 @@
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground font-inter;
+    @apply bg-gradient-to-b from-background to-background/95 text-foreground font-inter min-h-screen;
   }
 }
 
@@ -51,4 +51,12 @@
 
 .section-fade.visible {
   @apply opacity-100 translate-y-0;
+}
+
+.hero-gradient {
+  @apply absolute inset-0 bg-gradient-to-r from-purple-500/10 via-transparent to-blue-500/10 opacity-20 blur-3xl -z-10;
+}
+
+.card-hover {
+  @apply transition-all duration-300 hover:scale-[1.02] hover:shadow-lg hover:shadow-foreground/5;
 }

@@ -41,34 +41,39 @@ const experiences = [
 
 export const Experience = () => {
   return (
-    <section className="py-20 px-4" id="experience">
-      <h2 className="text-3xl font-bold text-center mb-12">Experience</h2>
-      <div className="max-w-4xl mx-auto space-y-8">
-        {experiences.map((exp, index) => (
-          <Card key={index} className="bg-secondary">
-            <CardHeader>
-              <CardTitle>
-                <div className="flex flex-col md:flex-row md:justify-between md:items-center gap-2">
-                  <div>
-                    <h3 className="text-xl font-semibold">{exp.title}</h3>
-                    <p className="text-muted-foreground">{exp.company}</p>
+    <section className="py-32 px-4 relative" id="experience">
+      <div className="hero-gradient" />
+      <div className="max-w-4xl mx-auto">
+        <h2 className="text-4xl font-bold text-center mb-16 bg-clip-text text-transparent bg-gradient-to-r from-white to-white/80">
+          Experience
+        </h2>
+        <div className="space-y-8">
+          {experiences.map((exp, index) => (
+            <Card key={index} className="bg-card/50 backdrop-blur-sm border-white/10 card-hover">
+              <CardHeader>
+                <CardTitle>
+                  <div className="flex flex-col md:flex-row md:justify-between md:items-start gap-2">
+                    <div>
+                      <h3 className="text-xl font-semibold text-white/90">{exp.title}</h3>
+                      <p className="text-primary/80">{exp.company}</p>
+                    </div>
+                    <div className="text-right">
+                      <p className="text-sm text-muted-foreground">{exp.period}</p>
+                      <p className="text-sm text-muted-foreground">{exp.location}</p>
+                    </div>
                   </div>
-                  <div className="text-right">
-                    <p className="text-sm text-muted-foreground">{exp.period}</p>
-                    <p className="text-sm text-muted-foreground">{exp.location}</p>
-                  </div>
-                </div>
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <ul className="list-disc list-inside space-y-2 text-sm text-muted-foreground">
-                {exp.highlights.map((highlight, idx) => (
-                  <li key={idx}>{highlight}</li>
-                ))}
-              </ul>
-            </CardContent>
-          </Card>
-        ))}
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <ul className="list-disc list-inside space-y-2 text-sm text-muted-foreground marker:text-primary/50">
+                  {exp.highlights.map((highlight, idx) => (
+                    <li key={idx} className="leading-relaxed">{highlight}</li>
+                  ))}
+                </ul>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
       </div>
     </section>
   );

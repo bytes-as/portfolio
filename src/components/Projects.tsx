@@ -17,27 +17,32 @@ const projects = [
 
 export const Projects = () => {
   return (
-    <section className="py-20 px-4" id="projects">
-      <h2 className="text-3xl font-bold text-center mb-12">Projects</h2>
-      <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
-        {projects.map((project, index) => (
-          <Card key={index} className="bg-secondary">
-            <CardHeader>
-              <CardTitle>
-                <h3 className="text-xl font-semibold">{project.title}</h3>
-                <p className="text-sm text-muted-foreground mt-2">
-                  {project.organization}
+    <section className="py-32 px-4 relative" id="projects">
+      <div className="hero-gradient" />
+      <div className="max-w-4xl mx-auto">
+        <h2 className="text-4xl font-bold text-center mb-16 bg-clip-text text-transparent bg-gradient-to-r from-white to-white/80">
+          Projects
+        </h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {projects.map((project, index) => (
+            <Card key={index} className="bg-card/50 backdrop-blur-sm border-white/10 card-hover">
+              <CardHeader>
+                <CardTitle>
+                  <h3 className="text-xl font-semibold text-white/90">{project.title}</h3>
+                  <p className="text-sm text-primary/80 mt-2">
+                    {project.organization}
+                  </p>
+                  <p className="text-sm text-muted-foreground">{project.period}</p>
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  {project.description}
                 </p>
-                <p className="text-sm text-muted-foreground">{project.period}</p>
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p className="text-sm text-muted-foreground">
-                {project.description}
-              </p>
-            </CardContent>
-          </Card>
-        ))}
+              </CardContent>
+            </Card>
+          ))}
+        </div>
       </div>
     </section>
   );
